@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Supplementary Material</title>
+
+    <!-- Compiled and minified CSS -->
+    <link
+        href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
+        rel="stylesheet">
+    <link
+        href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1>
+                    ️<i class="fa fa-sliders" aria-hidden="true" /></i> CoNeRF:
+                    Controllable Neural Radiance
+                    Fields <i class="fa fa-sliders" aria-hidden="true"></i>
+                    Supplementary Material
+                </h1>
+            </div>
+        </div>
+
+        <div>
+            <video style="width: 100%" autoplay loop muted>
+                <source src="videos/novel-view-novel-attribte.mp4"
+                    type="video/mp4">
+                Teaser
+            </video>
+        </div>
+        <hr>
+        <div class="row">
+            <h2>Real Data</h2>
+            <div class="row">
+                <h3>Novel view and novel attribute synthesis</h3>
+                <div class="row">
+                </div>
+            </div>
+            <div class="row">
+                <h3>Ablation</h3>
+                <div class="row">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2>Synthetic Data</h2>
+            <div class="row">
+                <h3>Comparison</h3>
+                <div class="row">
+                    <h4>Attributes</h4>
+                    <div class="row">
+                        <div class="col s4 center">
+                            Ours
+                        </div>
+                        <div class="col s4 center">
+                            Ours-$\mathcal{M}$
+                        </div>
+                        <div class="col s4 center">
+                            HyperNeRF+$\pi$
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4>View</h4>
+                    <div class="row">
+                        <div class="col s4 center">
+                            Ours
+                        </div>
+                        <div class="col s4 center">
+                            Ours-$\mathcal{M}$
+                        </div>
+                        <div class="col s4 center">
+                            HyperNeRF+$\pi$
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h3>Ablation</h3>
+                <div class="row">
+                </div>
+                <div class="row">
+                    <h4>View</h4>
+                    <div class="row">
+                        <div class="col s3 center">
+                            Base ($\mathcal{L}_\text{recon}$)
+                        </div>
+                        <div class="col s3 center">
+                            + $\mathcal{L}_\text{enc}$
+                        </div>
+                        <div class="col s3 center">
+                            + $\mathcal{L}_\text{attr}$
+                        </div>
+                        <div class="col s3 center">
+                            + $\mathcal{L}_\text{mask}$
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h3>Data</h3>
+                <div class="row">
+                    We additionally show below two sequences generated with
+                    <a href=https://github.com/google-research/kubric>Kubric
+                        [13]</a>, used during the evaluation of our method and
+                        baselines for novel view and novel attributes
+                        synthesis. </div> <div class="row">
+                        <div class="col s6 center">
+                            Training sequence
+                            <video style="width: 100%" class="bordered" muted
+                                controls>
+                                <source src="videos/synthetic-data/train.mp4"
+                                    type="video/mp4">
+                                Training sequence
+                            </video>
+                        </div>
+                        <div class="col s6 center">
+                            Validation sequence
+                            <video style="width: 100%" class="bordered" muted
+                                controls>
+                                <source src="videos/synthetic-data/valid.mp4"
+                                    type="video/mp4">
+                                Validation sequence
+                            </video>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+    </script>
+    <script src="https://use.fontawesome.com/6d0a02c31f.js"></script>
+    <script src="scripts/supplementary.js"></script>
+
+
+
+</body>
+
+</html>
