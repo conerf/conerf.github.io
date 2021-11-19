@@ -40,16 +40,18 @@ def store_single_image(
     path_set: List[Path],
     text_set: List[Optional[Path]],
     tmp_folder: Path,
+    width: int,
+    height: int,
 ):
     slider = imageio.imread(slider_name)
     if len(slider.shape) == 2:
         slider = cv2.cvtColor(slider, cv2.COLOR_GRAY2RGB)
-    slider = imutils.resize(slider, width=TARGET_WIDTH)
+    slider = imutils.resize(slider, width=width)
 
     imgs = []
     for img_name, text_name in zip(path_set, text_set):
         img = imageio.imread(img_name)
-        img = cv2.resize(img, (TARGET_WIDTH, TARGET_HEIGHT))
+        img = cv2.resize(img, (width, height))
         img = cv2.copyMakeBorder(
             img, 2, 2, 2, 2, cv2.BORDER_CONSTANT, None, (0, 0, 0)
         )
@@ -104,6 +106,8 @@ def main():
     parser.add_argument("out")
     parser.add_argument("--text", nargs="+")
     parser.add_argument("--name", default="rgb")
+    parser.add_argument("--width", default=TARGET_WIDTH, type=int)
+    parser.add_argument("--height", default=TARGET_HEIGHT, type=int)
 
     tmp_folder = Path("tmp")
     tmp_folder.mkdir(exist_ok=True)
@@ -123,7 +127,12 @@ def main():
             image_names = sort_paths(path.glob(f"{args.name}*.png"))
             set_of_paths.append(image_names)
             set_of_texts.append([text] * len(image_names))
-    psave = functools.partial(store_single_image, tmp_folder=tmp_folder)
+    psave = functools.partial(
+        store_single_image,
+        tmp_folder=tmp_folder,
+        height=args.height,
+        width=args.width,
+    )
 
     sliders = sort_paths(Path(args.sliders).glob("*.jpg"))
     set_of_paths = list(zip(*set_of_paths))
@@ -153,7 +162,7 @@ def main():
             "-c:v",
             "libx264",
             "-vf",
-            "fps=20",
+            "fps=24",
             f"{args.out}",
         ]
     )
