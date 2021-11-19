@@ -1,15 +1,14 @@
 import argparse
+import concurrent.futures
 import functools
-import os
-from typing import List
-import tqdm
+import multiprocessing as mp
 import subprocess
 import tempfile
 from pathlib import Path
-import concurrent.futures
-import multiprocessing as mp
+from typing import List
 
 import numpy as np
+import tqdm
 
 preamble = r"""\documentclass[tikz,crop]{standalone}
 \usepackage{xcolor}
