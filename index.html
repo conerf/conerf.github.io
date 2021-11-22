@@ -49,223 +49,98 @@
         <hr>
         <div>
             <h2>Generated sequences</h2>
-            <form>
-                <label>
-                    <input type="checkbox" id="chkbx-show-separate-videos"/>
-                    <span>Show separate videos for each model</span>
-                </label>
-            </form>
-
             <div id="combined-container" class="row">
-                <div class="col s12 center">
+                <div class="col s12">
                     <div class="row">
-                        <form>
-                            <fieldset id="dataset-group">
-                                <label>
-                                    <input type="radio" name="dataset-group" id="rb-face-expressions-1" checked/>
-                                    <span style="font-variant: small-caps;">Face Expressions I</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="dataset-group" id="rb-face-expressions-2"/>
-                                    <span style="font-variant: small-caps;">Face Expressions II</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="dataset-group" id="rb-face-expressions-3"/>
-                                    <span style="font-variant: small-caps;">Face Expressions III</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="dataset-group" id="rb-metronome"/>
-                                    <span style="font-variant: small-caps;">Metronome</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="dataset-group" id="rb-two-metronomes"/>
-                                    <span style="font-variant: small-caps;">Two Metronomes</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="dataset-group" id="rb-transformer"/>
-                                    <span style="font-variant: small-caps;">Transformer</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="dataset-group" id="rb-synthetic"/>
-                                    <span style="font-variant: small-caps;">Synthetic</span>
-                                </label>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <div class="row">
-                        <video 
-                            style="width: 60%" 
-                            id="combined-video" 
-                            autoplay loop muted
-                        >
-                            <source 
-                                src="videos/real/face-expressions-1/combined.mp4" 
-                                type="video/mp4"
-                                id="combined-video-src"
-                            >
-                            Combined video
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <div id="separate-container" class="row" style="display: none;">
-                <div class="col s4 center">
-                    <div class="row">
-                        <div class="col s2"></div>
-                        <div class="col s8" style="text-align: left;">
-                            <form>
-                                <fieldset id="dataset-group-ours">
-                                    <label>
-                                        <input type="radio" name="dataset-group-ours" id="rb-face-expressions-1-ours" checked/>
-                                        <span style="font-variant: small-caps;">Face Expressions I</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-ours" id="rb-face-expressions-2-ours"/>
-                                        <span style="font-variant: small-caps;">Face Expressions II</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-ours" id="rb-face-expressions-3-ours"/>
-                                        <span style="font-variant: small-caps;">Face Expressions III</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-ours" id="rb-metronome-ours"/>
-                                        <span style="font-variant: small-caps;">Metronome</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-ours" id="rb-two-metronomes-ours"/>
-                                        <span style="font-variant: small-caps;">Two Metronomes</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-ours" id="rb-transformer-ours"/>
-                                        <span style="font-variant: small-caps;">Transformer</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-ours" id="rb-synthetic-ours"/>
-                                        <span style="font-variant: small-caps;">Synthetic</span>
-                                    </label>
-                                </fieldset>
-                            </form>
+                        <h3 style="font-variant: small-caps;">
+                            Face Expressions I
+                        </h3>
+                        <div class="row center">
+                            <video style="width: 60%"loop muted controls>
+                                <source
+                                    src="videos/real/face-expressions-1/combined.mp4"
+                                    type="video/mp4">
+                                Face Expressions I combined
+                            </video>
                         </div>
                     </div>
                     <div class="row">
-                        <video 
-                            style="width: 60%" 
-                            id="ours-video" 
-                            autoplay loop muted controls
-                        >
-                            <source 
-                                src="videos/real/face-expressions-1/ours.mp4" 
-                                type="video/mp4"
-                                id="ours-video-src"
-                            >
-                            Combined video
-                        </video>
-                    </div>
-                </div>
-                <div class="col s4 center">
-                    <div class="row">
-                        <div class="col s2"></div>
-                        <div class="col s8" style="text-align: left;">
-                            <form>
-                                <fieldset id="dataset-group-hypernerf_ds_proj">
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds_proj" id="rb-face-expressions-1-hypernerf_ds_proj" checked/>
-                                        <span style="font-variant: small-caps;">Face Expressions I</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds_proj" id="rb-face-expressions-2-hypernerf_ds_proj"/>
-                                        <span style="font-variant: small-caps;">Face Expressions II</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds_proj" id="rb-face-expressions-3-hypernerf_ds_proj"/>
-                                        <span style="font-variant: small-caps;">Face Expressions III</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds_proj" id="rb-metronome-hypernerf_ds_proj"/>
-                                        <span style="font-variant: small-caps;">Metronome</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds_proj" id="rb-two-metronomes-hypernerf_ds_proj"/>
-                                        <span style="font-variant: small-caps;">Two Metronomes</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds_proj" id="rb-transformer-hypernerf_ds_proj"/>
-                                        <span style="font-variant: small-caps;">Transformer</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds_proj" id="rb-synthetic-hypernerf_ds_proj"/>
-                                        <span style="font-variant: small-caps;">Synthetic</span>
-                                    </label>
-                                </fieldset>
-                            </form>
+                        <h3 style="font-variant: small-caps;">
+                            Face Expressions II
+                        </h3>
+                        <div class="row center">
+                            <video style="width: 60%" loop muted controls>
+                                <source
+                                    src="videos/real/face-expressions-2/combined.mp4"
+                                    type="video/mp4">
+                                Face Expressions II combined
+                            </video>
                         </div>
                     </div>
                     <div class="row">
-                        <video 
-                            style="width: 60%" 
-                            id="hypernerf_ds_proj-video" 
-                            autoplay loop muted controls
-                        >
-                            <source 
-                                src="videos/real/face-expressions-1/hypernerf_ds_proj.mp4" 
-                                type="video/mp4"
-                                id="hypernerf_ds_proj-video-src"
-                            >
-                            Combined video
-                        </video>
-                    </div>
-                </div>
-                <div class="col s4 center">
-                    <div class="row">
-                        <div class="col s2"></div>
-                        <div class="col s8" style="text-align: left;">
-                            <form>
-                                <fieldset id="dataset-group-hypernerf_ds">
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds" id="rb-face-expressions-1-hypernerf_ds" checked/>
-                                        <span style="font-variant: small-caps;">Face Expressions I</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds" id="rb-face-expressions-2-hypernerf_ds"/>
-                                        <span style="font-variant: small-caps;">Face Expressions II</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds" id="rb-face-expressions-3-hypernerf_ds"/>
-                                        <span style="font-variant: small-caps;">Face Expressions III</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds" id="rb-metronome-hypernerf_ds"/>
-                                        <span style="font-variant: small-caps;">Metronome</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds" id="rb-two-metronomes-hypernerf_ds"/>
-                                        <span style="font-variant: small-caps;">Two Metronomes</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds" id="rb-transformer-hypernerf_ds"/>
-                                        <span style="font-variant: small-caps;">Transformer</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="dataset-group-hypernerf_ds" id="rb-synthetic-hypernerf_ds"/>
-                                        <span style="font-variant: small-caps;">Synthetic</span>
-                                    </label>
-                                </fieldset>
-                            </form>
+                        <h3 style="font-variant: small-caps;">
+                            Face Expressions III
+                        </h3>
+                        <div class="row center">
+                            <video style="width: 60%" loop muted controls>
+                                <source
+                                    src="videos/real/face-expressions-3/combined.mp4"
+                                    type="video/mp4">
+                                Face Expressions III combined
+                            </video>
                         </div>
                     </div>
                     <div class="row">
-                        <video 
-                            style="width: 60%" 
-                            id="hypernerf_ds-video" 
-                            autoplay loop muted controls
-                        >
-                            <source 
-                                src="videos/real/face-expressions-1/hypernerf_ds.mp4" 
-                                type="video/mp4"
-                                id="hypernerf_ds-video-src"
-                            >
-                            Combined video
-                        </video>
+                        <h3 style="font-variant: small-caps;">
+                            Metronome
+                        </h3>
+                        <div class="row center">
+                            <video style="width: 60%" loop muted controls>
+                                <source
+                                    src="videos/real/metronome/combined.mp4"
+                                    type="video/mp4">
+                                Metronome combined
+                            </video>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3 style="font-variant: small-caps;">
+                            Transformer
+                        </h3>
+                        <div class="row center">
+                            <video style="width: 60%" loop muted controls>
+                                <source
+                                    src="videos/real/transformer/combined.mp4"
+                                    type="video/mp4">
+                                Transformer combined
+                            </video>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3 style="font-variant: small-caps;">
+                            Two Metronomes
+                        </h3>
+                        <div class="row center">
+                            <video style="width: 60%" loop muted controls>
+                                <source
+                                    src="videos/real/two-metronomes/combined.mp4"
+                                    type="video/mp4">
+                                Two Metronomes combined
+                            </video>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3 style="font-variant: small-caps;">
+                            Synthetic
+                        </h3>
+                        <div class="row center">
+                            <video style="width: 60%" loop muted controls>
+                                <source
+                                    src="videos/real/synthetic/combined.mp4"
+                                    type="video/mp4">
+                                Synthetic combined
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -276,8 +151,8 @@
                 We additionally show below two sequences generated with
                 <a href=https://github.com/google-research/kubric>Kubric
                     [13]</a>, used during the evaluation of our method and
-                    baselines for novel view and novel attributes
-                    synthesis. </div> <div class="row">
+                    baselines for novel view and novel attributes synthesis.
+                    </div> <div class="row">
                     <div class="col s6 center">
                         Training sequence
                         <video style="width: 100%" class="bordered" muted
@@ -336,7 +211,6 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
     </script>
     <script src="https://use.fontawesome.com/6d0a02c31f.js"></script>
-    <script src="scripts/supplementary.js"></script>
 
 
 
